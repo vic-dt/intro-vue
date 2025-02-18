@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro VUE</title>
+    <title>Document</title>
 </head>
 <body>
-    
-<div id="myApp"></div>
+    <div id="myApp">
+        <h1>Batman quotes {{summaSententias}}</h1>
+
+        <button @:click="vectisAuctor">Toggle Auctor</button>
+        
+        <!-- <button @:click="addereSententia">Add quote</button> -->
+        &nbsp &nbsp 
+    <input 
+    type="text"
+    placeholder="Add quote"
+    @keypress.enter="addereSententia"
+    v-model="nuntiusNovus"
+    >
+
+        <hr>
+
+        <ul>
+
+            <li v-for="{sententia, auctor}, index in sententiae">
+
+               <span>{{index+1}} - {{ sententia}}</span> 
+
+               <blockquote v-if="revelareAuctor">{{ auctor}}</blockquote>
+
+            </li>
+            
+            
+        </ul>
+
+    </div>
+
+
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="apps.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

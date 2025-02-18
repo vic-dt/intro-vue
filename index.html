@@ -7,9 +7,18 @@
 </head>
 <body>
     <div id="myApp">
-        <h1>Batman quotes</h1>
+        <h1>Batman quotes {{summaSententias}}</h1>
 
-        <button v-on:click="vectisAuctor">Toggle Auctor</button>
+        <button @:click="vectisAuctor">Toggle Auctor</button>
+        
+        <!-- <button @:click="addereSententia">Add quote</button> -->
+        &nbsp &nbsp 
+    <input 
+    type="text"
+    placeholder="Add quote"
+    @keypress.enter="addereSententia"
+    v-model="nuntiusNovus"
+    >
 
         <hr>
 
